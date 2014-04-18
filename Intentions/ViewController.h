@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LeakViewController.h"
 
 @interface ViewController : UIViewController
+
+@property (weak, nonatomic) LeakViewController *leakViewController;
 
 @end

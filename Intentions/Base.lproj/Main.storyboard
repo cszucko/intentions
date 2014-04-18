@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Leak View Controller-->
         <scene sceneID="bXB-WL-JKI">
             <objects>
-                <viewController id="ftf-dv-8V4" sceneMemberID="viewController">
+                <viewController id="ftf-dv-8V4" customClass="LeakViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Tg-xC-kxU"/>
                         <viewControllerLayoutGuide type="bottom" id="SfS-ad-fZZ"/>
@@ -15,7 +15,22 @@
                     <view key="view" contentMode="scaleToFill" id="kLc-ST-WZ1">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFM-oJ-bgy">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AFM-oJ-bgy" firstAttribute="leading" secondItem="kLc-ST-WZ1" secondAttribute="leading" id="grb-eW-gbe"/>
+                            <constraint firstAttribute="trailing" secondItem="AFM-oJ-bgy" secondAttribute="trailing" id="jaG-kj-Ycd"/>
+                            <constraint firstItem="AFM-oJ-bgy" firstAttribute="top" secondItem="0Tg-xC-kxU" secondAttribute="bottom" id="pAG-BA-ccf"/>
+                            <constraint firstItem="SfS-ad-fZZ" firstAttribute="top" secondItem="AFM-oJ-bgy" secondAttribute="bottom" id="uoO-pR-Y6i"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KWd-AD-RIC">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ni7-j7-cy3">
@@ -24,6 +39,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="textView" destination="AFM-oJ-bgy" id="1em-lz-UtM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pS-VG-KNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

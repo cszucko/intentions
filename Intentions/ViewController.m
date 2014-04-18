@@ -18,4 +18,10 @@
     self.modelContainer.model = person;
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    self.leakViewController.observedObject = [self modelContainer];
+    self.leakViewController.observedObjectAddress = (__bridge void *)([self modelContainer]);
+    self.leakViewController.leakedObservationInfo = [self.modelContainer observationInfo];
+}
+
 @end
